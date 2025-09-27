@@ -71,3 +71,41 @@ else:
     else:  # History path
         social_points += 10
         print("History boosted your social connections!")
+
+# Step 4: Final Semester Assessment
+print("\nFinal Semester Assessment")
+final_choice = input("Type 'finish' to evaluate your semester: ")
+
+# Identity operator for type checking
+if type(final_choice) is str:
+
+    # Nested if statements (minimum 2 levels) for multiple endings
+    if final_choice != "":  # Using 'is not' to ensure user typed something
+        if current_gpa >= 3.5:
+            if stress_level < 50:
+                print("\nEnding 1: Academic Champion!")
+                print("Your GPA is excellent and stress is manageable. You graduate with honors!")
+            else:
+                print("\nEnding 2: Overachiever Burnout")
+                print("GPA is high but stress took a toll. Time to relax this summer!")
+        elif current_gpa >= 2.0:
+            if social_points > 60:
+                print("\nEnding 3: Well-Rounded Success")
+                print("Your GPA is decent and your social life thrived. Balance achieved!")
+            else:
+                print("\nEnding 4: Mediocre Semester")
+                print("You passed, but could improve academics or social life next time.")
+        else:
+            print("\nEnding 5: Semester Struggles")
+            print("GPA too low. Need to rethink your strategies and study habits.")
+    else:
+        print("You did not enter a choice. Cannot evaluate semester.")  # is not used above
+else:
+    print("Unexpected input type. Cannot evaluate semester.")
+
+# Display final stats
+print("\nFinal Statistics:")
+print(f"GPA: {current_gpa}")
+print(f"Study Hours: {study_hours}")
+print(f"Social Points: {social_points}")
+print(f"Stress Level: {stress_level}")
